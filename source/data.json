@@ -1,0 +1,220 @@
+{
+  "dataset": {
+    "id": "UNCOMTRADE-MEX-HS8542-2023-2024",
+    "product_code": "8542",
+    "product_label": "Circuitos integrados electrónicos y microestructuras",
+    "reporter": "México",
+    "currency": "USD",
+    "unit_in_source": "miles de USD corrientes",
+    "years": [
+      2023,
+      2024
+    ],
+    "snapshot_date": "2026-11-16",
+    "source": "UN Comtrade, presentado por World Integrated Trade Solution (WITS)",
+    "source_url_2023": "https://wits.worldbank.org/trade/comtrade/en/country/MEX/year/2023/tradeflow/Imports/partner/ALL/product/8542",
+    "source_url_2024": "https://wits.worldbank.org/trade/comtrade/en/country/MEX/year/2024/tradeflow/Imports/partner/ALL/product/8542",
+    "api_docs_url": "https://comtradeplus.un.org/en/api-docs",
+    "nomenclature": "HS 1988/92 (H0), código 8542",
+    "caveat": "Los valores representan comercio nominal agregado por economía de origen; no son volúmenes físicos, proveedores de una empresa ni rutas logísticas. 'Other Asia, nes' es un socio agregado sin geografía precisa. La simulación regional afecta solo a los socios de Asia desglosados en la instantánea; el residual sin región asignada no se atribuye a Asia."
+  },
+  "totals_usd_millions": {
+    "2023": 24137.22785,
+    "2024": 25923.16025
+  },
+  "partners": [
+    {
+      "name": "Malasia",
+      "source_name": "Malaysia",
+      "region": "Asia",
+      "coordinates": [
+        102,
+        4
+      ],
+      "usd_millions": {
+        "2023": 5910.95276,
+        "2024": 6052.61529
+      }
+    },
+    {
+      "name": "Asia sin especificar",
+      "source_name": "Other Asia, nes",
+      "region": "Asia",
+      "coordinates": null,
+      "usd_millions": {
+        "2023": 4183.0758,
+        "2024": 5130.4075
+      },
+      "aggregate": true
+    },
+    {
+      "name": "China",
+      "source_name": "China",
+      "region": "Asia",
+      "coordinates": [
+        104,
+        35
+      ],
+      "usd_millions": {
+        "2023": 3728.64355,
+        "2024": 3350.43798
+      }
+    },
+    {
+      "name": "Vietnam",
+      "source_name": "Vietnam",
+      "region": "Asia",
+      "coordinates": [
+        108,
+        16
+      ],
+      "usd_millions": {
+        "2023": 2632.81491,
+        "2024": 2412.8253
+      }
+    },
+    {
+      "name": "Corea del Sur",
+      "source_name": "Korea, Rep.",
+      "region": "Asia",
+      "coordinates": [
+        127.5,
+        36
+      ],
+      "usd_millions": {
+        "2023": 1739.93797,
+        "2024": 2401.84629
+      }
+    },
+    {
+      "name": "Costa Rica",
+      "source_name": "Costa Rica",
+      "region": "América",
+      "coordinates": [
+        -84,
+        9.8
+      ],
+      "usd_millions": {
+        "2023": 905.39127,
+        "2024": 1529.42675
+      }
+    },
+    {
+      "name": "Estados Unidos",
+      "source_name": "United States",
+      "region": "América",
+      "coordinates": [
+        -98,
+        39
+      ],
+      "usd_millions": {
+        "2023": 1411.3143,
+        "2024": 1343.30215
+      }
+    },
+    {
+      "name": "Tailandia",
+      "source_name": "Thailand",
+      "region": "Asia",
+      "coordinates": [
+        101,
+        15
+      ],
+      "usd_millions": {
+        "2023": 809.36583,
+        "2024": 765.80412
+      }
+    },
+    {
+      "name": "Filipinas",
+      "source_name": "Philippines",
+      "region": "Asia",
+      "coordinates": [
+        122,
+        12
+      ],
+      "usd_millions": {
+        "2023": 753.93811,
+        "2024": 599.22207
+      }
+    },
+    {
+      "name": "Japón",
+      "source_name": "Japan",
+      "region": "Asia",
+      "coordinates": [
+        138,
+        37
+      ],
+      "usd_millions": {
+        "2023": 528.52584,
+        "2024": 547.46578
+      }
+    },
+    {
+      "name": "Singapur",
+      "source_name": "Singapore",
+      "region": "Asia",
+      "coordinates": [
+        103.8,
+        1.35
+      ],
+      "usd_millions": {
+        "2023": 302.03756,
+        "2024": 340.03226
+      }
+    },
+    {
+      "name": "Indonesia",
+      "source_name": "Indonesia",
+      "region": "Asia",
+      "coordinates": [
+        117,
+        0
+      ],
+      "usd_millions": {
+        "2023": 80.57137,
+        "2024": 66.51852
+      }
+    },
+    {
+      "name": "Hong Kong",
+      "source_name": "Hong Kong, China",
+      "region": "Asia",
+      "coordinates": [
+        114.2,
+        22.3
+      ],
+      "usd_millions": {
+        "2023": 47.77359,
+        "2024": 49.20728
+      }
+    },
+    {
+      "name": "India",
+      "source_name": "India",
+      "region": "Asia",
+      "coordinates": [
+        78,
+        22
+      ],
+      "usd_millions": {
+        "2023": 6.04209,
+        "2024": 6.23818
+      }
+    },
+    {
+      "name": "Otros orígenes (residual)",
+      "source_name": "Residual de los demás socios de la tabla fuente",
+      "region": "Sin asignar",
+      "coordinates": null,
+      "aggregate": true,
+      "usd_millions": {
+        "2023": 1096.8429,
+        "2024": 1327.81078
+      }
+    }
+  ],
+  "trade_note": "HS 8542 incluye circuitos integrados electrónicos y microestructuras; esta selección no equivale a todo el universo de semiconductores ni a una cadena empresarial específica.",
+  "simulation_note": "La red de plantas, inventarios, capacidades, demanda, costos, rutas esquemáticas y crisis son completamente simulados. Los flujos de comercio solo informan la mezcla relativa de economías de origen."
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f4fb"><title>The Ripple Room · Crisis digital twin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="The Ripple Room inicio"><span class="brand-symbol"><i></i><i></i><i></i></span><span>THE RIPPLE ROOM</span></a>
+    <div class="top-meta"><span class="demo-badge"><i></i> SIMULACIÓN INTERACTIVA</span><span class="cut">COMERCIO · CORTE 2024</span></div>
+    <button class="icon-pill" id="about-button" title="Acerca del modelo" aria-label="Acerca del modelo">i</button>
+  </header>
+  <main id="top">
+    <section class="intro-row">
+      <div><p class="eyebrow">AGENTIC DECISION LAB <span> / </span> EPISODIO 01</p><h1>Un choque en el origen.<br><em>Una cadena en cascada.</em></h1><p class="intro-copy">Activa una interrupción, observa cómo se propaga y decide qué debe proteger el sistema: servicio, inventario o costo.</p></div>
+      <div class="episode-stamp"><span class="stamp-label">CASO DE ESTRÉS</span><strong>Semiconductores<br>hacia México</strong><small>Red operativa simulada · comercio real como contexto</small></div>
+    </section>
+
+    <section class="crisis-toolbar panel" aria-label="Configuración de la crisis">
+      <div class="toolbar-main">
+        <div class="control-block scenario-control"><span class="control-label">01 / ELIGE EL CHOQUE</span>
+          <div class="scenario-tabs" role="tablist" aria-label="Escenario de crisis">
+            <button class="scenario-tab active" role="tab" aria-selected="true" data-scenario="asia"><span class="tab-pip"></span><span><b>Shock regional</b><small>Proveedores asiáticos</small></span></button>
+            <button class="scenario-tab" role="tab" aria-selected="false" data-scenario="malaysia_vietnam"><span class="tab-pip"></span><span><b>Doble interrupción</b><small>Malasia + Vietnam</small></span></button>
+            <button class="scenario-tab" role="tab" aria-selected="false" data-scenario="demand"><span class="tab-pip"></span><span><b>Pico de demanda</b><small>+30% repentino</small></span></button>
+          </div>
+        </div>
+        <div class="control-block range-control"><label class="control-label" for="duration-slider">02 / DURACIÓN DEL CHOQUE <strong id="duration-label">14 días</strong></label><input id="duration-slider" type="range" min="3" max="24" value="14"><div class="range-ends"><span>3 días</span><span>24 días</span></div></div>
+        <div class="control-block range-control inventory-control"><label class="control-label" for="stock-slider">03 / INVENTARIO DE SEGURIDAD <strong id="stock-label">7 días</strong></label><input id="stock-slider" type="range" min="2" max="24" value="7"><div class="range-ends"><span>2 días</span><span>24 días</span></div></div>
+        <div class="run-control"><span class="control-label">04 / CORRER EPISODIO</span><button class="run-button" id="run-button"><span class="run-icon">▶</span><span id="run-label">Simular 30 días</span><span class="arrow">↗</span></button><small id="engine-state">Motor local · sin conexión externa</small></div>
+      </div>
+      <div class="scenario-caption"><span class="alert-mark">!</span><span id="scenario-caption">El shock interrumpe simultáneamente el abastecimiento desde las economías asiáticas identificadas. La extensión operativa es un supuesto del escenario.</span><span class="synthetic-label">WHAT-IF · NO ES PRONÓSTICO</span></div>
+    </section>
+
+    <section class="stage-grid">
+      <article class="panel map-panel">
+        <header class="panel-head map-head"><div><p class="eyebrow">LA RED EN TENSIÓN <span>·</span> DÍA <b id="day-readout">00</b> / 30</p><h2 id="map-title">El origen del shock y su propagación.</h2><p class="panel-sub">Vista centrada en el Pacífico · ancho de línea = valor comercial por origen. Arcos esquemáticos, no rutas logísticas.</p></div><div class="map-actions"><span class="map-status"><i id="status-dot"></i><span id="status-label">LISTA PARA INICIAR</span></span><button class="reset-button" id="reset-button">Reiniciar</button></div></header>
+        <div class="map-frame"><svg id="world-map" viewBox="0 0 1080 470" role="img" aria-label="Mapa centrado en el Pacífico con economías de origen comercial y nodos empresariales hipotéticos"></svg><div id="map-tooltip" class="map-tooltip" hidden></div><div class="map-overlay-tag"><span class="legend-dot real"></span>COMERCIO OBSERVADO <span class="legend-sep">/</span><span class="legend-dot synthetic"></span>RED SIMULADA</div><div class="map-insight" aria-live="polite"><span id="map-insight-title">VALOR DE ORIGEN EN ESCENARIO</span><strong id="map-insight-value">—</strong><small id="map-insight-note">Valor comercial contextual; no mide volumen ni capacidad.</small></div><div class="map-scale">PACÍFICO · PROYECCIÓN CENTRADA</div></div>
+        <div class="map-footer"><div class="map-legend"><span><i class="legend-line base"></i> Flujo base 2024</span><span><i class="legend-line affected"></i> Origen afectado</span><span><i class="legend-line alternate"></i> Reasignación del plan</span><span><i class="legend-node"></i> Nodo operativo hipotético</span></div><div class="map-note">Los arcos conectan economías de origen con México; no representan rutas de transporte observadas.</div></div>
+      </article>
+      <aside class="decision-column">
+        <article class="panel agents-panel"><header class="panel-head compact-head"><div><p class="eyebrow">MESA DE AGENTES <span>·</span> OBJETIVOS EN CONFLICTO</p><h2>Tres miradas. Una decisión.</h2></div><span class="agent-live"><i></i> ACTIVA</span></header>
+          <div class="agent-list">
+            <div class="agent-card ops"><span class="agent-avatar">OP</span><div><div class="agent-title"><b>Operaciones</b><span class="agent-focus">SERVICIO</span></div><p id="ops-message">Protege inventario crítico antes de que aparezca demanda no atendida.</p></div></div>
+            <div class="agent-card procurement"><span class="agent-avatar">CO</span><div><div class="agent-title"><b>Abastecimiento</b><span class="agent-focus">CONTINUIDAD</span></div><p id="proc-message">Activa capacidad alterna y prepara una reasignación temporal de origen.</p></div></div>
+            <div class="agent-card finance"><span class="agent-avatar">FI</span><div><div class="agent-title"><b>Finanzas</b><span class="agent-focus">COSTO</span></div><p id="finance-message">Compara el sobrecosto de respuesta con el costo operativo de perder servicio.</p></div></div>
+          </div>
+          <div class="decision-divider"></div>
+          <div class="plan-heading"><div><p class="eyebrow">DECISIÓN DEL OPERADOR</p><h3>¿Qué debe proteger el plan?</h3></div><span class="plan-count">03 PLANES</span></div>
+          <div class="plan-options" role="radiogroup" aria-label="Estrategia de respuesta">
+            <button class="plan-option" role="radio" aria-checked="false" data-plan="lean"><span class="plan-radio"></span><span class="plan-text"><b>Contener costo</b><small>Menos expedición · acepta riesgo</small></span><span class="plan-pill">AHORRO</span></button>
+            <button class="plan-option active" role="radio" aria-checked="true" data-plan="balanced"><span class="plan-radio"></span><span class="plan-text"><b>Balanceado</b><small>Reruteo parcial · riesgo acotado</small></span><span class="plan-pill recommended">SUGERIDO</span></button>
+            <button class="plan-option" role="radio" aria-checked="false" data-plan="continuity"><span class="plan-radio"></span><span class="plan-text"><b>Proteger servicio</b><small>Más capacidad · mayor sobrecosto</small></span><span class="plan-pill">SERVICIO</span></button>
+          </div>
+          <div class="agent-verdict" id="agent-verdict"><span class="verdict-icon">✳</span><p><b>Lectura de la simulación</b><span>El plan balanceado absorbe parte del shock con inventario y capacidad alterna.</span></p></div>
+          <button class="decision-button" id="decision-button" disabled><span>Aplicar este plan al episodio</span><span>→</span></button>
+        </article>
+        <div class="decision-footnote"><span class="shield">◈</span><span>Los agentes son roles simulados. La decisión cambia solo el gemelo digital; no afecta una cadena real.</span></div>
+      </aside>
+    </section>
+
+    <section class="outcome-row" aria-label="Resultado de la simulación">
+      <article class="panel outcome-panel"><header class="outcome-heading"><div><p class="eyebrow">EL FUTURO DEL SISTEMA <span>·</span> RESULTADO DEL EPISODIO</p><h2>Tu decisión cambia la curva.</h2></div><div class="outcome-badge"><i></i><span id="outcome-status">ESCENARIO BASE</span></div></header>
+        <div class="metric-row">
+          <div class="metric"><span>NIVEL DE SERVICIO</span><strong id="service-value">100<span>%</span></strong><small id="service-caption">demanda atendida en el horizonte</small></div>
+          <div class="metric"><span>DÍAS CON FALTANTE</span><strong id="shortage-value">0</strong><small>periodos con demanda no cubierta</small></div>
+          <div class="metric"><span>BACKLOG FINAL</span><strong id="backlog-value">0</strong><small>unidades índice simuladas</small></div>
+          <div class="metric"><span>COSTO DE RESPUESTA</span><strong id="cost-value">100</strong><small>índice · base del modelo = 100</small></div>
+        </div>
+        <div class="chart-layout"><div class="chart-title"><b>Inventario y demanda pendiente</b><span>UNIDADES ÍNDICE · NO SON UNIDADES FÍSICAS</span></div><svg id="timeline-chart" viewBox="0 0 920 264" role="img" aria-label="Dos series alineadas: cobertura de inventario y demanda pendiente durante 30 días"></svg><div class="chart-legend"><span><i class="stock-line"></i>Cobertura · días</span><span><i class="backlog-line"></i>Demanda pendiente · índice</span><span><i class="shock-band"></i>Ventana de choque</span><span class="horizon-label">HORIZONTE 30 DÍAS · MOTOR DETERMINISTA</span></div></div>
+      </article>
+      <article class="panel comparison-panel"><header class="panel-head compact-head"><div><p class="eyebrow">CONTRAFÁCTICOS <span>·</span> MISMO CHOQUE</p><h2>Servicio frente a costo.</h2></div><span class="model-tag">WHAT-IF</span></header><svg id="compare-chart" class="compare-chart" viewBox="0 0 420 250" role="img" aria-label="Trade-off de los tres planes: nivel de servicio frente a costo de respuesta"></svg><div class="compare-note">Resultados del modelo sintético · no son pronósticos de una empresa real.</div></article>
+    </section>
+    <section class="source-strip"><div class="source-mark">DATA BASIS</div><div class="source-copy"><b>Comercio real, operación hipotética.</b><span>Importaciones mexicanas de HS 8542 por economía de origen, UN Comtrade/WITS · valores nominales en USD · 2023–2024. Inventarios, tiempos, plantas, costos, capacidades de respuesta y crisis son supuestos simulados.</span></div><a href="https://wits.worldbank.org/trade/comtrade/en/country/MEX/year/2024/tradeflow/Imports/partner/ALL/product/8542" target="_blank" rel="noreferrer">Consultar fuente 2024 ↗</a></section>
+    <footer><span>THE RIPPLE ROOM <i>·</i> DEMO DE DECISIÓN CON AGENTES SIMULADOS</span><span>Sin conexiones externas · sin escrituras · estado local efímero</span></footer>
+  </main>
+</div>
+<div class="modal-backdrop" id="about-modal" hidden><section class="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title"><button class="modal-close" id="modal-close" aria-label="Cerrar">×</button><p class="eyebrow">NOTA DE MÉTODO</p><h2 id="about-title">Qué es real y qué es una simulación.</h2><p>Los flujos comerciales por economía de origen provienen de UN Comtrade y se presentan mediante WITS. Son valores agregados, no cantidades físicas ni proveedores de una compañía. La red interna, sus inventarios y capacidad, los agentes y el choque son elementos sintéticos del gemelo digital.</p><p>El motor es determinista: los mismos parámetros producen el mismo resultado. Los “agentes” representan objetivos de Operaciones, Abastecimiento y Finanzas; sus mensajes se generan con reglas del prototipo y no con un LLM conectado.</p><button class="modal-okay" id="modal-okay">Entendido</button></section></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="vendor/d3.min.js"></script><script src="app.js"></script>
+</body></html>
