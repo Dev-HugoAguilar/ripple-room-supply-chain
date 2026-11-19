@@ -50,7 +50,7 @@ geográfico.
 ## Estructura
 
 ```text
-app/index.html          Aplicación servible: mapa, series y simulación
+app/index.html          Aplicación servible: mapa, series y simulación (publicada)
 source/                 Generador y modelo
   simulation.py         Modelo determinista de la red y las crisis
   extract_world.py      Extrae la base geográfica del mapa
@@ -58,6 +58,8 @@ source/                 Generador y modelo
   data.json             Parámetros de la simulación
   world.geojson         Base geográfica
   requirements.txt
+scripts/                publicar.py · verificar_paridad.py
+tests/                  test_simulacion.py (invariantes del motor)
 docs/LEEME.md           Documentación original del proyecto
 docs/cover.jpg          Captura real de la aplicación servida
 ```
@@ -65,10 +67,16 @@ docs/cover.jpg          Captura real de la aplicación servida
 ## Regenerar la demo
 
 ```bash
-cd source
-python -m pip install -r requirements.txt
-python build_preview.py
+# desde la raíz del repositorio
+python source/build_preview.py       # -> source/prototipo_local.html
+python scripts/publicar.py           # -> app/index.html (bytes y SHA-256)
+python scripts/verificar_paridad.py  # falla si la demo publicada difiere
+python -m pytest tests -q            # invariantes del motor determinista
 ```
+
+El orden completo y qué produce cada paso están en
+[`scripts/README.md`](scripts/README.md). Las dependencias de
+`source/requirements.txt` solo hacen falta para la API local opcional.
 
 ## Límites
 
